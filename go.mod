@@ -3,9 +3,9 @@ module github.com/corani/go-semantic-splitter
 go 1.23.0
 
 require (
-	github.com/chewxy/math32 v1.10.1
+	github.com/chewxy/math32 v1.11.0
 	github.com/gosbd/gosbd v0.1.5
-	github.com/pkoukk/tiktoken-go v0.1.6
+	github.com/pkoukk/tiktoken-go v0.1.7
 	github.com/tmc/langchaingo v0.1.12
 )
 
