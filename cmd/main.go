@@ -5,6 +5,8 @@ import (
 	"fmt"
 	"io"
 	"os"
+
+	splitter "github.com/corani/go-semantic-splitter"
 )
 
 func readFile(path string) (string, error) {
@@ -32,17 +34,17 @@ func main1(ctx context.Context, args []string) error {
 		return err
 	}
 
-	emb, err := NewCybertronEmbedder("sentence-transformers/all-MiniLM-L6-v2")
+	emb, err := splitter.NewCybertronEmbedder("sentence-transformers/all-MiniLM-L6-v2")
 	if err != nil {
 		return err
 	}
 
-	cnt, err := NewTikTokenCounter("cl100k_base")
+	cnt, err := splitter.NewTikTokenCounter("cl100k_base")
 	if err != nil {
 		return err
 	}
 
-	splitter := NewSemanticSplitter(emb, cnt)
+	splitter := splitter.NewSemanticSplitter(emb, cnt)
 
 	docs, err := splitter.Split(ctx, text)
 	if err != nil {

@@ -1,4 +1,4 @@
-package main
+package splitter
 
 import (
 	"github.com/chewxy/math32"
